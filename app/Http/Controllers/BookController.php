@@ -9,8 +9,7 @@ class BookController extends Controller
 {
     public function index()
     {
-        // Menggunakan paginate() agar pagination berfungsi
-        $books = Book::paginate(10); // Angka 10 menentukan jumlah item per halaman
+        $books = Book::paginate(10);
         return view('books.index', compact('books'));
     }
 

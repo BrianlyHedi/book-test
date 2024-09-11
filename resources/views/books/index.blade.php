@@ -8,7 +8,6 @@
             <div class="alert alert-success">{{ $message }}</div>
         @endif
 
-        <!-- Add New Book Button with Icon -->
         <a href="{{ route('books.create') }}" class="btn btn-primary mb-3">
             <i class="fas fa-plus"></i> Add New Book
         </a>
@@ -36,12 +35,10 @@
                             <td>{{ $book->slug }}</td>
                             <td>{{ $book->author }}</td>
                             <td>
-                                <!-- Edit Button with Icon -->
                                 <a href="{{ route('books.edit', $book->id) }}" class="btn btn-warning btn-sm">
                                     <i class="fas fa-edit"></i> Edit
                                 </a>
 
-                                <!-- Delete Button with Icon -->
                                 <form action="{{ route('books.destroy', $book->id) }}" method="POST" style="display:inline-block;">
                                     @csrf
                                     @method('DELETE')
@@ -55,7 +52,6 @@
                 </tbody>
             </table>
 
-            <!-- Pagination Links -->
             {{ $books->links() }}
         @endif
     </div>

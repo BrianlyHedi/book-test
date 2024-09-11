@@ -82,23 +82,17 @@
     </header>
 
     <div class="container">
-        <!-- Tempat untuk pesan sukses, error, dll. -->
         @if ($message = Session::get('success'))
             <div class="message">{{ $message }}</div>
         @endif
 
-        <!-- Tempat konten utama -->
         @yield('content')
-         <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- SweetAlert2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 
-    <!-- Custom Script for SweetAlert2 -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Handle delete button clicks
             document.querySelectorAll('.btn-delete').forEach(button => {
                 button.addEventListener('click', function (e) {
                     e.preventDefault();
